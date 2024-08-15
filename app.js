@@ -5,7 +5,7 @@ http
   .createServer((req, res) => {
     let path = req.url;
     res.writeHead(400, { "Content-Type": "text/html" });
-    if (path === "") {
+    if (path === "/") {
       fs.readFile("./index.html", (err, data) => {
         if (err) throw err;
         res.write(data);
